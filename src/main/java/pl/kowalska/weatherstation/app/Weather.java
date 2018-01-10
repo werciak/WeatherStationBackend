@@ -31,21 +31,33 @@ public class Weather {
 
     @Column(name = "szerokosc")
     @NotNull
-    private int szerokosc;
+    private double szerokosc;
 
     @Column(name = "dlugosc")
     @NotNull
-    private int dlugosc;
+    private double dlugosc;
 
     @Column(name = "czas")
     @NotNull
     private String czas;
 
+    @Column(name = "info",length = 500)
+    @NotNull
+    private String info;
+
     public Weather() {
 
     }
 
-    public Weather(int nrPlytki, String temperatura, String wilgotnosc, String cisnienie, int szerokosc, int dlugosc, String czas) {
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public Weather(int nrPlytki, String temperatura, String wilgotnosc, String cisnienie, double szerokosc, double dlugosc, String czas, String info) {
         this.nrPlytki = nrPlytki;
         this.temperatura = temperatura;
         this.wilgotnosc = wilgotnosc;
@@ -53,6 +65,8 @@ public class Weather {
         this.szerokosc = szerokosc;
         this.dlugosc = dlugosc;
         this.czas = czas;
+        this.info = info;
+
     }
 
     public int getId() {
@@ -96,19 +110,19 @@ public class Weather {
         this.cisnienie = cisnienie;
     }
 
-    public int getSzerokosc() {
+    public double getSzerokosc() {
         return szerokosc;
     }
 
-    public void setSzerokosc(int szerokosc) {
+    public void setSzerokosc(double szerokosc) {
         this.szerokosc = szerokosc;
     }
 
-    public int getDlugosc() {
+    public double getDlugosc() {
         return dlugosc;
     }
 
-    public void setDlugosc(int dlugosc) {
+    public void setDlugosc(double dlugosc) {
         this.dlugosc = dlugosc;
     }
 
